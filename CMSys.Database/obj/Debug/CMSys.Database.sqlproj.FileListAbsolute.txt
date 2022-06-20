@@ -1,0 +1,6 @@
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Database\bin\Debug\CMSys.Database.dacpac
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Database\bin\Debug\CMSys.Database.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Database\bin\Debug\CMSys.Database.pdb
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Database\obj\Debug\CMSys.Database.sqlproj.AssemblyReference.cache
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Database\obj\Debug\CMSys.Database.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Database\obj\Debug\CMSys.Database.pdb

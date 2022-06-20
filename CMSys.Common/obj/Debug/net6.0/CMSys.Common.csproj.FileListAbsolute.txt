@@ -1,0 +1,12 @@
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\bin\Debug\net6.0\CMSys.Common.deps.json
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\bin\Debug\net6.0\CMSys.Common.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\bin\Debug\net6.0\CMSys.Common.pdb
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\CMSys.Common.csproj.AssemblyReference.cache
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\CMSys.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\CMSys.Common.AssemblyInfoInputs.cache
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\CMSys.Common.AssemblyInfo.cs
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\CMSys.Common.csproj.CoreCompileInputs.cache
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\CMSys.Common.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\refint\CMSys.Common.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\CMSys.Common.pdb
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Common\obj\Debug\net6.0\ref\CMSys.Common.dll

@@ -1,0 +1,10 @@
+﻿:r .\Scripts\Roles.sql
+:r .\Scripts\CourseGroups.sql
+:r .\Scripts\CourseTypes.sql
+:r .\Scripts\Courses.sql
+:r .\Scripts\Users1.sql
+:r .\Scripts\Users2.sql
+:r .\Scripts\UserRoles.sql
+:r .\Scripts\TrainerGroups.sql
+:r .\Scripts\Trainers.sql
+:r .\Scripts\CourseTrainers.sql

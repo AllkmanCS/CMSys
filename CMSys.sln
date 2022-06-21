@@ -11,9 +11,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CMSys.Database", "CMSys.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSys.Infrastructure", "CMSys.Infrastructure\CMSys.Infrastructure.csproj", "{84B8C097-464D-4C56-8129-88530D1B0ABC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSys.ConsoleApp.UI", "CMSys.ConsoleApp.UI\CMSys.ConsoleApp.UI.csproj", "{D6E13A2E-643B-43C0-A729-C1602494DA15}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSys.UI", "CMSys.UI\CMSys.UI.csproj", "{54779DBF-DF81-4CC4-9271-F41AA481F12C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSys.UI", "CMSys.UI\CMSys.UI.csproj", "{54779DBF-DF81-4CC4-9271-F41AA481F12C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +37,6 @@ Global
 		{84B8C097-464D-4C56-8129-88530D1B0ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84B8C097-464D-4C56-8129-88530D1B0ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84B8C097-464D-4C56-8129-88530D1B0ABC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6E13A2E-643B-43C0-A729-C1602494DA15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6E13A2E-643B-43C0-A729-C1602494DA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6E13A2E-643B-43C0-A729-C1602494DA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6E13A2E-643B-43C0-A729-C1602494DA15}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54779DBF-DF81-4CC4-9271-F41AA481F12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54779DBF-DF81-4CC4-9271-F41AA481F12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54779DBF-DF81-4CC4-9271-F41AA481F12C}.Release|Any CPU.ActiveCfg = Release|Any CPU

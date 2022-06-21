@@ -1,0 +1,15 @@
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\bin\Debug\net6.0\CMSys.Core.deps.json
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\bin\Debug\net6.0\CMSys.Core.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\bin\Debug\net6.0\CMSys.Core.pdb
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\bin\Debug\net6.0\CMSys.Common.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\bin\Debug\net6.0\CMSys.Common.pdb
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.csproj.AssemblyReference.cache
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.AssemblyInfoInputs.cache
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.AssemblyInfo.cs
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.csproj.CoreCompileInputs.cache
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.csproj.CopyComplete
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\refint\CMSys.Core.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\CMSys.Core.pdb
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.Core\obj\Debug\net6.0\ref\CMSys.Core.dll

@@ -1,7 +1,13 @@
+using CMSys.Core.Repositories;
+using CMSys.Infrastructure;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.Configure<UnitOfWorkOptions>(builder.Configuration.GetSection(nameof(UnitOfWorkOptions)));
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 

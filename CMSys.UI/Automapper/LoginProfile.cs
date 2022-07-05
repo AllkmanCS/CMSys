@@ -1,6 +1,6 @@
 ﻿using CMSys.Core.Entities.Membership;
-using CMSys.UI.Models;
 using AutoMapper;
+using CMSys.UI.ViewModels;
 
 namespace CMSys.UI.Automapper
 {

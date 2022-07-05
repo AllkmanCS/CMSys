@@ -1,15 +1,40 @@
+using AutoMapper;
 using CMSys.Core.Repositories;
 using CMSys.Infrastructure;
+using CMSys.UI.Automapper;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Configure<UnitOfWorkOptions>(builder.Configuration.GetSection(nameof(UnitOfWorkOptions)));
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+       .AddCookie();
+
+var mapperConfig = new MapperConfiguration(mc => {
+    mc.AddProfile<LoginProfile>();
+    mc.AddProfile<CourseProfile>();
+    mc.AddProfile<TrainerProfile>();
+    mc.AddProfile<CourseTrainerProfile>();
+    mc.AddProfile<UserProfile>();
+});
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+//builder.Services.AddAuthorization(options =>
+//options.AddPolicy())
+
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//    .AddCookie(options => { options.LoginPath = "/login"; });
+
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -21,13 +46,12 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

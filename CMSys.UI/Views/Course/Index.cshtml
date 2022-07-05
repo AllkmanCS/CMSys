@@ -1,0 +1,42 @@
+﻿@using CMSys.UI.ViewModels
+@model CoursesViewModel
+@{
+    ViewData["Title"] = "Courses Page";
+}
+<div><h5>Courses</h5></div>
+<div class="w3-row">
+    <div class="w3-center">
+        <p>Add a w3-rounded class to round the borders:</p>
+        <div class="w3-bar w3-border w3-round">
+            <a href="#" class="w3-bar-item w3-button">&laquo;</a>
+            <a href="#" class="w3-bar-item w3-button">1</a>
+            <a href="#" class="w3-bar-item w3-button">2</a>
+            <a href="#" class="w3-bar-item w3-button">3</a>
+            <a href="#" class="w3-bar-item w3-button">4</a>
+            <a href="#" class="w3-bar-item w3-button">&raquo;</a>
+        </div>
+    </div>
+</div>
+@foreach (var course in Model.Items)
+{
+    
+<div class="w3-container">
+  <h2>@course.Name</h2>
+  <p>Add containers inside the card to create different sections:</p>
+
+  <div class="w3-card-4" style="width:50%;">
+    <header class="w3-container w3-blue">
+      <h1>Header</h1>
+    </header>
+
+    <div class="w3-container">
+     
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <footer class="w3-container w3-blue">
+      <h5>Footer</h5>
+    </footer>
+  </div>
+</div>
+}

@@ -65,3 +65,5 @@ C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.UI\obj\Debug\net6.0\refint
 C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.UI\obj\Debug\net6.0\CMSys.UI.pdb
 C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.UI\obj\Debug\net6.0\CMSys.UI.genruntimeconfig.cache
 C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.UI\obj\Debug\net6.0\ref\CMSys.UI.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.UI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.UI\bin\Debug\net6.0\libman.json

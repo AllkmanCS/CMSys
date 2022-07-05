@@ -4,43 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CMSys.UI</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CMSys.UI.styles.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CMSys.UI</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                                                <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
+<body class="w3-light-grey">
+    <hader>
+        <div class="w3-bar w3-white" style="box-shadow:5px 5px 20px grey">
+            <a class="w3-bar-item w3-button w3-right">Home</a>
+        </div>
+    </hader>
+    <div class="w3-top">
+        <div class="w3-sidebar w3-blue w3-bar-block" style="width:200px;">
+            <h3 class="w3-bar-item">Menu</h3>
+            <a class="w3-bar-item w3-button" asp-controller="Course" asp-action="Index">Courses</a>
+            <a class="w3-bar-item w3-button" asp-controller="Trainer" asp-action="Index">Trainers</a>
+            <a class="w3-bar-item w3-button" asp-controller="Course" asp-action="GetCourseList">Course List</a>
+            <a class="w3-bar-item w3-button" asp-controller="Course" asp-action="GetCourseGroups">Course Groups</a>
+            <a class="w3-bar-item w3-button" asp-controller="Trainer" asp-action="GetTrainerList">Trainer List</a>
+            <a class="w3-bar-item w3-button" asp-controller="Trainer" asp-action="GetTrainerGroups">Trainer Groups</a>
+            <a class="w3-bar-item w3-button" asp-controller="User" asp-action="GetUsers">Users</a>
+        </div>
+    </div>
+    <div class="w3-container" style="margin-left:200px; margin-top:50px;">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="border-top footer text-muted w3-bottom w3-white w3-container" style="margin-left:220px;">
+        <div class="">
             &copy; 2022 - CMSys.UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

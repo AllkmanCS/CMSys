@@ -8,7 +8,7 @@
         public Guid TrainerGroupId { get; private set; }
         public string Description { get; private set; }
 
-        public UserViewModel User { get; }
-        public TrainerGroupViewModel TrainerGroup { get; }
+        public UserViewModel User { get; set;  } = new UserViewModel();
+        public TrainerGroupViewModel TrainerGroup { get; set; }
     }
 }

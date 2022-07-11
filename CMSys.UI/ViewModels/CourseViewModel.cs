@@ -8,7 +8,7 @@
         public string? CourseTypeName { get; set; }
         public string? CourseGroupName { get; set; }
         public bool IsNew { get; set; }
-        public List<TrainerViewModel>? Trainers { get; set; }
+        public List<CourseTrainerViewModel>? Trainers { get; set; }
         public CourseViewModel()
         {
 

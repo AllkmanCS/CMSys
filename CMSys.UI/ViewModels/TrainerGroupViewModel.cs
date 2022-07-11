@@ -2,8 +2,11 @@
 {
     public class TrainerGroupViewModel
     {
-        public string Name { get; private set; }
-        public int VisualOrder { get; private set; }
-        public string Description { get; private set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public int VisualOrder { get; set; }
+        public string Description { get; set; }
+        public List<List<TrainerViewModel>> TrainersInGroup { get; set; } = new List<List<TrainerViewModel>>();
+
     }
 }

@@ -12,8 +12,8 @@
 
         <form class="w3-container w3-card-4" action="/login" method="post" style="width:300px;">
             <h2 class="w3-text-blue">Welcome!</h2>
-            @Html.EditorFor(model => model.Email, new { htmlAttributes = new {@class="form-control", placeholder="Email"}})
-            @Html.EditorFor(model => model.Password, new { htmlAttributes = new {@class="form-control", placeholder="Password"}})
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class="form-control", placeholder="Email"}})
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class="form-control", placeholder="Password"}})
             <input type="submit" value="Login" class="w3-button" />
         </form>
     </div>

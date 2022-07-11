@@ -2,10 +2,10 @@
 {
     public class CourseTrainerViewModel
     {
-        public Guid CourseId { get; }
-        public Guid TrainerId { get; }
-        public int VisualOrder { get; private set; }
+        public Guid CourseId { get; set; }
+        public Guid TrainerId { get; set; }
+        public int VisualOrder { get; set; }
 
-        public TrainerViewModel Trainer { get; }
+        public TrainerViewModel Trainer { get; set; }
     }
 }

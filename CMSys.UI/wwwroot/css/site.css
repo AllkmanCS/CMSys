@@ -17,3 +17,7 @@ body {
   margin-bottom: 60px;
   background-color:lightgray;
 }
+.modal-content {
+    height: 500px;
+    width: 700px;
+}

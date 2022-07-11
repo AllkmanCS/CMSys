@@ -4,6 +4,7 @@ namespace CMSys.UI.ViewModels
 {
     public class UserViewModel
     {
+        public Guid? Id { get; set; }
         public string Email { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -13,6 +14,8 @@ namespace CMSys.UI.ViewModels
         public string Position { get; private set; }
         public string Location { get; private set; }
         public byte[] Photo { get; private set; }
+        public string FullName => $"{FirstName} {LastName}";
+
 
     }
 }

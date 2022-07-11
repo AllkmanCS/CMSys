@@ -3,40 +3,53 @@
 @{
     ViewData["Title"] = "Courses Page";
 }
-<div><h5>Courses</h5></div>
-<div class="w3-row">
-    <div class="w3-center">
-        <p>Add a w3-rounded class to round the borders:</p>
-        <div class="w3-bar w3-border w3-round">
-            <a href="#" class="w3-bar-item w3-button">&laquo;</a>
-            <a href="#" class="w3-bar-item w3-button">1</a>
-            <a href="#" class="w3-bar-item w3-button">2</a>
-            <a href="#" class="w3-bar-item w3-button">3</a>
-            <a href="#" class="w3-bar-item w3-button">4</a>
-            <a href="#" class="w3-bar-item w3-button">&raquo;</a>
-        </div>
-    </div>
-</div>
-@foreach (var course in Model.Items)
-{
-    
 <div class="w3-container">
-  <h2>@course.Name</h2>
-  <p>Add containers inside the card to create different sections:</p>
+<h3>Courses</h3>
+<div class="w3-show-inline-block w3-border w3-round">
+    <div class="w3-bar w3-white w3-border w3-round">
+        @if (Model.CanPrevious)
+        {
+            <a href="/courses/index/?@Model.PreviousPageNumber" class="w3-button">&laquo;</a>
+        }
+        @foreach (var item in Model.Pagination)
+        {
+            <a href="/courses/index/?@item" class="w3-button">@item</a>  
+        }
+        @if(Model.CanNext)
+            {
+                <a href="/courses/index/?@Model.NextPageNumber" class="w3-button">&raquo</a>
+            }
+        </div>
 
-  <div class="w3-card-4" style="width:50%;">
-    <header class="w3-container w3-blue">
-      <h1>Header</h1>
-    </header>
+        <form asp-controller="Course" asp-action="FilterByTypes">
+            <select asp-for="CourseViewModel.Id" asp-items="@Model.CourseTypes" class="w3-padding">
+                <option>Select Course Type</option>
+            </select>
+                <input type="submit" value="Submit" />
+        </form>
+        <form asp-controller="Course" asp-action="FilterByGroups">
+            <select asp-for="CourseViewModel.Id" asp-items="@Model.CourseGroups" class="w3-padding">
+                <option>Select Course Group</option>
+            </select>
+            <input type="submit" value="Submit" />
+        </form>
 
-    <div class="w3-container">
-     
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-
-    <footer class="w3-container w3-blue">
-      <h5>Footer</h5>
-    </footer>
-  </div>
+        @*<select asp-items="Model.CourseTypes" class="w3-padding" id="courseType" onchange=""></select>*@
+        <ul class="w3-ul">
+            @foreach (var course in Model.Items)
+            {
+                <li class="w3-white w3-margin-top w3-border w3-round">
+                    <h4>@course.Name</h4>
+                    <div class="w3-bar">
+                        <button class="w3-button w3-small w3-round-large w3-green">@course.CourseTypeName</button>
+                        <button class="w3-button w3-small w3-round-large w3-grey">@course.CourseGroupName</button>
+                    </div>
+                    <h5>@course.Description</h5>
+                    <a href="/courses/@course.Id" class="w3-text-blue">More info...</a>
+                </li>
+            }
+        </ul>
 </div>
-}
+
+</div>
+

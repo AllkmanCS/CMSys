@@ -9,6 +9,7 @@ namespace CMSys.UI.Automapper
         public UserProfile()
         {
             CreateMap<User, UserViewModel>();
+            //.AfterMap((domain, view) => view.Photo[55] = 3b);`
         }
     }
 }

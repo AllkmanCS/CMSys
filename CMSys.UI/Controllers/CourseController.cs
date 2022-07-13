@@ -12,60 +12,32 @@ using System.IO;
 
 namespace CMSys.UI.Controllers
 {
-    //[Route("/courses")]
     public class CourseController : Controller
     {
         private IUnitOfWork _context;
         private IMapper _mapper;
-        private const int PAGE = 1;
-        private const int PER_PAGE = 5;
-        private readonly string _courseTypeName = "";
-        private PagedList<Course> _pagedList;
-        
+
         public CourseController(IUnitOfWork context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
-            _pagedList = _context.CourseRepository.GetPagedList(new PageInfo(PAGE, PER_PAGE),
-               c => string.IsNullOrEmpty(_courseTypeName) ? true : c.CourseType.Name == _courseTypeName);
+           
         }
         [Route("courses")]
-        public IActionResult Index(int page = 1, int perPage = 5, string courseTypeName = "")
+        public IActionResult Index(int page, int perPage, string courseTypeName)
         {
-            var coursesViewModel = new CoursesViewModel();
-
-            //setting values to model properties
-            coursesViewModel.Page = PAGE;
-            coursesViewModel.NextPageNumber = PAGE + 1;
-            coursesViewModel.PreviousPageNumber = PAGE - 1;
-            coursesViewModel.CourseTypes = CourseTypes();
-            coursesViewModel.CourseGroups = CourseGroups();
-
-            //pagination
-            var paginationList = new List<int>();
-            for (int i = 1; i < _pagedList.Total; i++)
-            {
-                if(_pagedList.IsNearFromPageOrBoundary(i))
-                {
-                    paginationList.Add(i);
-                }
-            }
-            coursesViewModel.Pagination = paginationList;
-            //mapping
-            var mappedCourses = _mapper.Map(_pagedList, coursesViewModel);
-            var courses = new List<CourseViewModel>();
-            foreach (var item in mappedCourses.Items)
-            {
-                var courseModel = _mapper.Map<CourseViewModel>(item);
-                courses.Add(courseModel);
-            }
+            CoursesViewModel mappedCourses = GetCoursesViewModel(page, perPage, courseTypeName);
             return View(mappedCourses);
         }
         [Route("courses/{id}")]
-        public IActionResult GetCourse(Guid id)
+        public IActionResult GetCourse(Guid id, int page, int perPage, string courseTypeName)
         {
             var courseViewModel = new CourseViewModel();
-            var course = _pagedList.Items.Where(x => x.Id == id).FirstOrDefault();
+            page = courseViewModel.PageInfo.Page;
+            perPage = courseViewModel.PageInfo.PerPage;
+            var pagedList = _context.CourseRepository.GetPagedList(new PageInfo(page, perPage),
+                c => string.IsNullOrEmpty(courseTypeName) ? true : c.CourseType.Name == courseTypeName);
+            var course = pagedList.Items.Where(x => x.Id == id).FirstOrDefault();
             if (course == null)
             {
                 return NotFound();
@@ -81,9 +53,57 @@ namespace CMSys.UI.Controllers
                 return View(mappedCourse);
         }
         [Authorize]
-        public IActionResult CourseCollection()
+        [Route("/admin/courses")]
+        public IActionResult CourseCollection(int page, int perPage, string courseTypeName)
         {
-            return View();
+            CoursesViewModel mappedCourses = GetCoursesViewModel(page, perPage, courseTypeName);
+            return View(mappedCourses);
+        }
+        [Authorize]
+        [Route("/admin/courses/create")]
+        public IActionResult CreateCourse(CourseViewModel courseViewModel)
+        {
+            courseViewModel = new CourseViewModel();
+            var mappedCourse = _mapper.Map<Course>(courseViewModel);
+            _context.CourseRepository.Add(mappedCourse);
+            _context.Commit();
+            return View(mappedCourse);
+        }
+        public IActionResult FilterCourses(Guid courseTypeId, Guid courseGroupId)
+        {
+            var coursesViewModel = new CoursesViewModel();
+
+            return View(coursesViewModel);
+        }
+        private CoursesViewModel GetCoursesViewModel(int page, int perPage, string courseTypeName)
+        {
+            var coursesViewModel = new CoursesViewModel();
+            page = coursesViewModel.PageInfo.Page;
+            perPage = coursesViewModel.PerPage;
+
+            var pagedList = _context.CourseRepository.GetPagedList(new PageInfo(page, perPage),
+              c => string.IsNullOrEmpty(courseTypeName) ? true : c.CourseType.Name == courseTypeName);
+            var mappedCourses = _mapper.Map(pagedList, coursesViewModel);
+            //pagination
+            for (int i = 1; i < pagedList.TotalPages; i++)
+            {
+                if (pagedList.IsNearFromPageOrBoundary(i))
+                {
+                    coursesViewModel.Pagination.Add(i);
+                    page = i;
+                }
+            }
+            coursesViewModel.CourseTypes = CourseTypes();
+            coursesViewModel.CourseGroups = CourseGroups();
+
+            
+            var courses = new List<CourseViewModel>();
+            foreach (var item in mappedCourses.Items)
+            {
+                courses.Add(item);
+            }
+
+            return mappedCourses;
         }
         private ICollection<SelectListItem> CourseTypes()
         {
@@ -97,9 +117,9 @@ namespace CMSys.UI.Controllers
         }
         private ICollection<SelectListItem> CourseGroups()
         {
-            var courseTypes = _context.CourseGroupRepository.All().Select(ct => (ct.Name, ct.VisualOrder, ct.Id)).ToList();
+            var courseGroups = _context.CourseGroupRepository.All().Select(ct => (ct.Name, ct.VisualOrder, ct.Id)).ToList();
             var list = new List<SelectListItem>() { new SelectListItem("Select Group Type", "0") };
-            foreach (var item in courseTypes)
+            foreach (var item in courseGroups)
             {
                 list.Add(new SelectListItem(item.Name, item.Id.ToString()));
                 

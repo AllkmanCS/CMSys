@@ -1,0 +1,29 @@
+﻿@model CourseViewModel
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+    <h1>Create Course</h1>
+    <div>
+    <p>Name</p>
+    <input type="text" />
+    <input type="radio" />
+    <p>Is New</p>
+    <p>Course Group</p>
+    <div>
+            <form asp-controller="Course" asp-action="CreateCourse">
+                <select asp-for="Id" asp-items="@Model.CourseTypes" class="w3-padding">
+                    <option>Select Course Type</option>
+                </select>
+                @*<input type="submit" value="Submit" />*@
+            </form>
+        </div>
+        <div>
+            <form asp-controller="Course" asp-action="CreateCourse">
+                <select asp-for="Id" asp-items="@Model.CourseGroups" class="w3-padding">
+                    <option>Select Course Group</option>
+                </select>
+                @*<input type="submit" value="Submit" />*@
+            </form>
+        </div>
+    </div>

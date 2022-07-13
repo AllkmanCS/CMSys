@@ -1,4 +1,8 @@
-﻿namespace CMSys.UI.ViewModels
+﻿using CMSys.Common.Paging;
+using CMSys.Core.Entities.Catalog;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace CMSys.UI.ViewModels
 {
     public class CourseViewModel
     {
@@ -9,9 +13,9 @@
         public string? CourseGroupName { get; set; }
         public bool IsNew { get; set; }
         public List<CourseTrainerViewModel>? Trainers { get; set; }
-        public CourseViewModel()
-        {
-
-        }
+        public PageInfo PageInfo { get; set; } = new PageInfo();
+        public int PerPage { get; set; } = 5;
+        public ICollection<SelectListItem> CourseTypes { get; set; }
+        public ICollection<SelectListItem> CourseGroups { get; set; }
     }
 }

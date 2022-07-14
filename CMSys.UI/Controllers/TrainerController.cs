@@ -38,7 +38,23 @@ namespace CMSys.UI.Controllers
 
                 item.TrainersInGroup.Add(listOfTrainersInGroup);
             }
-            return View(trainersGroupViewModel);
+            return View(trainersGroupModel);
+        }
+        [Route("admin/trainers")]
+        public IActionResult TrainersCollection(List<TrainerViewModel> trainersViewModel)
+        {
+            var trainers = _context.TrainerRepository.All().ToList();
+            var trainersModel = _mapper.Map(trainers, trainersViewModel);
+
+            return View(trainersViewModel);
+        }
+        [Route("admin/trainergroups")]
+        public IActionResult TrainerGroupsCollection(List<TrainerGroupViewModel> trainerGroupsViewModel)
+        {
+            var trainerGroups = _context.TrainerGroupRepository.All().ToList();
+            var trainerGroupsModel = _mapper.Map(trainerGroups, trainerGroupsViewModel);
+
+            return View(trainerGroupsModel);
         }
     }
 }

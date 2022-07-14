@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CMSys.Common.Paging;
 using CMSys.Core.Entities.Membership;
 using CMSys.UI.ViewModels;
 
@@ -9,7 +10,7 @@ namespace CMSys.UI.Automapper
         public UserProfile()
         {
             CreateMap<User, UserViewModel>();
-            //.AfterMap((domain, view) => view.Photo[55] = 3b);`
+            CreateMap<PagedList<User>, UsersViewModel>();
         }
     }
 }

@@ -29,7 +29,8 @@ namespace CMSys.UI.ViewModels
                 }
                 return _pagination;
             }
-            set => _pagination = value; }
+            set => _pagination = value; 
+        }
         public int NextPageNumber { get => _nextPageNumber + _page; set => _nextPageNumber = value; }
         public int PreviousPageNumber { get => _previousPageNumber - _page; set => _previousPageNumber = value; }
         public ICollection<SelectListItem> CourseTypes { get; set; }

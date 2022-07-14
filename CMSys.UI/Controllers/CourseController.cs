@@ -53,14 +53,22 @@ namespace CMSys.UI.Controllers
                 return View(mappedCourse);
         }
         [Authorize]
-        [Route("/admin/courses")]
+        [Route("admin/courses")]
         public IActionResult CourseCollection(int page, int perPage, string courseTypeName)
         {
-            CoursesViewModel mappedCourses = GetCoursesViewModel(page, perPage, courseTypeName);
+            var mappedCourses = GetCoursesViewModel(page, perPage, courseTypeName);
             return View(mappedCourses);
         }
         [Authorize]
-        [Route("/admin/courses/create")]
+        [Route("admin/coursegroups")]
+        public IActionResult CourseGroupsCollection(List<CourseGroupViewModel> courseGroupsViewModel)
+        {
+            var courseGroups = _context.CourseGroupRepository.All();
+            var mappedCourseGroups = _mapper.Map(courseGroups, courseGroupsViewModel);
+            return View(mappedCourseGroups);
+        }
+        [Authorize]
+        [Route("admin/courses/create")]
         public IActionResult CreateCourse(CourseViewModel courseViewModel)
         {
             courseViewModel = new CourseViewModel();
@@ -68,12 +76,6 @@ namespace CMSys.UI.Controllers
             _context.CourseRepository.Add(mappedCourse);
             _context.Commit();
             return View(mappedCourse);
-        }
-        public IActionResult FilterCourses(Guid courseTypeId, Guid courseGroupId)
-        {
-            var coursesViewModel = new CoursesViewModel();
-
-            return View(coursesViewModel);
         }
         private CoursesViewModel GetCoursesViewModel(int page, int perPage, string courseTypeName)
         {
@@ -90,13 +92,11 @@ namespace CMSys.UI.Controllers
                 if (pagedList.IsNearFromPageOrBoundary(i))
                 {
                     coursesViewModel.Pagination.Add(i);
-                    page = i;
                 }
             }
             coursesViewModel.CourseTypes = CourseTypes();
             coursesViewModel.CourseGroups = CourseGroups();
 
-            
             var courses = new List<CourseViewModel>();
             foreach (var item in mappedCourses.Items)
             {
@@ -135,5 +135,11 @@ namespace CMSys.UI.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        //public IActionResult FilterCourses(Guid courseTypeId, Guid courseGroupId)
+        //{
+        //    var coursesViewModel = new CoursesViewModel();
+
+        //    return View(coursesViewModel);
+        //}
     }
 }

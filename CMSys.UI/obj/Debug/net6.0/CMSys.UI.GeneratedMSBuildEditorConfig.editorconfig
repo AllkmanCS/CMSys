@@ -15,12 +15,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\AlgirdasCernevicius\source\repos\CMSys\CMSys.UI
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Account/IndexUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleFVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/CourseCollection.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZUNvbGxlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/CourseGroupsCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZUdyb3Vwc0NvbGxlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/CreateCourse.cshtml]
@@ -53,6 +61,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Trainer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Trainer/TrainerGroupsCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lclxUcmFpbmVyR3JvdXBzQ29sbGVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Trainer/TrainersCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lclxUcmFpbmVyc0NvbGxlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/_ViewImports.cshtml]

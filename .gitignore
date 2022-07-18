@@ -1,7 +1,5 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
-/.vs/CMSys/FileContentIndex
-CMSys.Database/CMSys.Database.dbmdl
-CMSys.Database/CMSys.Database.jfm
+.vs/
+CMSys.Database/

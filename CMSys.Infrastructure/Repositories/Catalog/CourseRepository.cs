@@ -44,7 +44,6 @@ internal sealed class CourseRepository : Repository<Course, Guid>, ICourseReposi
             throw new RepositoryException(ex.Message, ex);
         }
     }
-
     protected override IEnumerable<Course> InternalFilter(Expression<Func<Course, bool>> predicate)
     {
         return MakeInclusions().Where(predicate)

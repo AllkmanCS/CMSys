@@ -21,12 +21,18 @@ namespace CMSys.UI.Controllers
         {
             _context = context;
             _mapper = mapper;
-           
         }
         [Route("courses")]
         public IActionResult Index(int page, int perPage, string courseTypeName)
         {
-            CoursesViewModel mappedCourses = GetCoursesViewModel(page, perPage, courseTypeName);
+            CoursesViewModel courses = GetCoursesViewModel(page, perPage, courseTypeName);
+            return View(courses);
+        }
+        [Authorize]
+        [Route("admin/courses")]
+        public IActionResult CourseCollection(int page, int perPage, string courseTypeName)
+        {
+            var mappedCourses = GetCoursesViewModel(page, perPage, courseTypeName);
             return View(mappedCourses);
         }
         [Route("courses/{id}")]
@@ -53,13 +59,6 @@ namespace CMSys.UI.Controllers
                 return View(mappedCourse);
         }
         [Authorize]
-        [Route("admin/courses")]
-        public IActionResult CourseCollection(int page, int perPage, string courseTypeName)
-        {
-            var mappedCourses = GetCoursesViewModel(page, perPage, courseTypeName);
-            return View(mappedCourses);
-        }
-        [Authorize]
         [Route("admin/coursegroups")]
         public IActionResult CourseGroupsCollection(List<CourseGroupViewModel> courseGroupsViewModel)
         {
@@ -72,21 +71,46 @@ namespace CMSys.UI.Controllers
         public IActionResult CreateCourse(CourseViewModel courseViewModel)
         {
             courseViewModel = new CourseViewModel();
-            var mappedCourse = _mapper.Map<Course>(courseViewModel);
-            _context.CourseRepository.Add(mappedCourse);
-            _context.Commit();
+
+            courseViewModel.CourseTypes = CourseTypes();
+            courseViewModel.CourseGroups = CourseGroups();
+            return View(courseViewModel);
+        }
+        [Authorize]
+        public IActionResult EditCourse(CourseViewModel courseViewModel)
+        {
+                if(courseViewModel == null)
+                {
+                    return BadRequest("Course object is null.");
+                }
+                if(!ModelState.IsValid)
+                {
+                    return BadRequest("Invalid model object.");
+                }
+                var mappedCourse = _mapper.Map<Course>(courseViewModel);
+                
+                var courses = _context.CourseRepository.All().ToList();
+                courses.Add(mappedCourse);
+                _context.Commit();
+            
+
+            courseViewModel.CourseTypes = CourseTypes();
+            courseViewModel.CourseGroups = CourseGroups();
+
+
             return View(mappedCourse);
         }
         private CoursesViewModel GetCoursesViewModel(int page, int perPage, string courseTypeName)
         {
             var coursesViewModel = new CoursesViewModel();
-            page = coursesViewModel.PageInfo.Page;
+            page = coursesViewModel.Page;
             perPage = coursesViewModel.PerPage;
 
             var pagedList = _context.CourseRepository.GetPagedList(new PageInfo(page, perPage),
               c => string.IsNullOrEmpty(courseTypeName) ? true : c.CourseType.Name == courseTypeName);
             var mappedCourses = _mapper.Map(pagedList, coursesViewModel);
             //pagination
+            
             for (int i = 1; i < pagedList.TotalPages; i++)
             {
                 if (pagedList.IsNearFromPageOrBoundary(i))
@@ -96,13 +120,6 @@ namespace CMSys.UI.Controllers
             }
             coursesViewModel.CourseTypes = CourseTypes();
             coursesViewModel.CourseGroups = CourseGroups();
-
-            var courses = new List<CourseViewModel>();
-            foreach (var item in mappedCourses.Items)
-            {
-                courses.Add(item);
-            }
-
             return mappedCourses;
         }
         private ICollection<SelectListItem> CourseTypes()

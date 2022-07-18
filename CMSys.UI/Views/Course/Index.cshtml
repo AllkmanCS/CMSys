@@ -15,6 +15,7 @@
             {
                 <a href="/courses/?@item" class="w3-button" onclick="location.href ='@Url.Action("Index", "Course")'">@item</a>
             }
+                
             @if (Model.CanNext)
             {
                 <a href="/courses/?@Model.NextPageNumber" class="w3-button">&raquo</a>
@@ -44,8 +45,8 @@
                 <li class="w3-white w3-margin-top w3-border w3-round">
                     <h4>@course.Name</h4>
                     <div class="w3-bar">
-                        <button class="w3-button w3-small w3-round-large w3-green">@course.CourseTypeName</button>
-                        <button class="w3-button w3-small w3-round-large w3-grey">@course.CourseGroupName</button>
+                        <button class="w3-button w3-small w3-round-large w3-green">@course.CourseType.Name</button>
+                        <button class="w3-button w3-small w3-round-large w3-grey">@course.CourseGroup.Name</button>
                     </div>
                     <h5>@course.Description</h5>
                     <a href="/courses/@course.Id" class="w3-text-blue">More info...</a>

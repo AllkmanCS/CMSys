@@ -11,8 +11,10 @@ namespace CMSys.UI.Automapper
         {
             CreateMap<PagedList<Course>, CoursesViewModel>()
                 .ForMember(cvm => cvm.Items, pl => pl.MapFrom(list => list.Items));
-            CreateMap<Course, CourseViewModel>().ReverseMap();
+            CreateMap<Course, CourseViewModel>()
+                .ReverseMap();
             CreateMap<CourseGroup, CourseGroupViewModel>();
+            CreateMap<CourseType, CourseTypeViewModel>();
         }
     }
 }

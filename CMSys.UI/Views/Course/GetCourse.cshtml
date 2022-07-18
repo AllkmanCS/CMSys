@@ -6,8 +6,8 @@
 @{
     <h4>@Model.Name</h4>
     <div class="w3-bar">
-        <button class="w3-button w3-small w3-round-large w3-green">@Model.CourseTypeName</button>
-        <button class="w3-button w3-small w3-round-large w3-grey">@Model.CourseGroupName</button>
+        <button class="w3-button w3-small w3-round-large w3-green">@Model.CourseType.Name</button>
+        <button class="w3-button w3-small w3-round-large w3-grey">@Model.CourseGroup.Name</button>
     </div>
     <p>@Model.Description</p>
 
@@ -42,7 +42,7 @@
             </div>
         }
     </div>
-    <a href="/courses" class="w3-text-blue">Back to list</a>
+    <a href="./" class="w3-text-blue">Back to list</a>
 
 
 

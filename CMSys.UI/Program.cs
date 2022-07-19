@@ -3,8 +3,6 @@ using CMSys.Core.Repositories;
 using CMSys.Infrastructure;
 using CMSys.UI.Automapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,15 +24,8 @@ var mapperConfig = new MapperConfiguration(mc => {
 });
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
-//builder.Services.AddAuthorization(options =>
-//options.AddPolicy())
-
-//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-//    .AddCookie(options => { options.LoginPath = "/login"; });
-
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

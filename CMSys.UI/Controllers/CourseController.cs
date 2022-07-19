@@ -68,7 +68,8 @@ namespace CMSys.UI.Controllers
         }
         [Authorize]
         [Route("admin/courses/create")]
-        public IActionResult CreateCourse(CourseViewModel courseViewModel)
+        [HttpGet]
+        public IActionResult CourseForm(CourseViewModel courseViewModel)
         {
             courseViewModel = new CourseViewModel();
 
@@ -77,28 +78,40 @@ namespace CMSys.UI.Controllers
             return View(courseViewModel);
         }
         [Authorize]
-        public IActionResult EditCourse(CourseViewModel courseViewModel)
+        [HttpPost]
+        [Route("admin/courses/create")]
+        public IActionResult CreateCourse([FromForm]CourseViewModel courseViewModel)
         {
-                if(courseViewModel == null)
-                {
-                    return BadRequest("Course object is null.");
-                }
-                if(!ModelState.IsValid)
-                {
-                    return BadRequest("Invalid model object.");
-                }
-                var mappedCourse = _mapper.Map<Course>(courseViewModel);
-                
-                var courses = _context.CourseRepository.All().ToList();
-                courses.Add(mappedCourse);
-                _context.Commit();
-            
-
             courseViewModel.CourseTypes = CourseTypes();
             courseViewModel.CourseGroups = CourseGroups();
 
+            if (courseViewModel == null)
+            {
+                return BadRequest("Course object is null.");
+            }
 
-            return View(mappedCourse);
+            var mappedCourse = _mapper.Map<Course>(courseViewModel);
+
+            _context.CourseRepository.Add(mappedCourse);
+           
+            _context.Commit();
+
+            return RedirectToAction("CourseCollection");
+        }
+
+        public IActionResult Update(Guid id)
+        {
+
+            return View();
+        }
+        [HttpPost, ActionName("Update")]
+        public IActionResult UpdateCourse(Guid? id)
+        {
+            if (id == null)
+            {
+                return BadRequest("Course object is null.");
+            }
+            var course = _mapper.Map<Course>(id);
         }
         private CoursesViewModel GetCoursesViewModel(int page, int perPage, string courseTypeName)
         {
@@ -124,8 +137,8 @@ namespace CMSys.UI.Controllers
         }
         private ICollection<SelectListItem> CourseTypes()
         {
-            var courseTypes = _context.CourseRepository.All().Select(ct => (ct.Name, ct.VisualOrder, ct.Id)).ToList();
-            var list = new List<SelectListItem>();
+            var courseTypes = _context.CourseTypeRepository.All().Select(ct => (ct.Name, ct.VisualOrder, ct.Id)).ToList();
+            var list = new List<SelectListItem>() { new SelectListItem("Select Course Type", "0") };
             foreach (var item in courseTypes)
             {
                 list.Add(new SelectListItem(item.Name, item.Id.ToString()));
@@ -135,7 +148,7 @@ namespace CMSys.UI.Controllers
         private ICollection<SelectListItem> CourseGroups()
         {
             var courseGroups = _context.CourseGroupRepository.All().Select(ct => (ct.Name, ct.VisualOrder, ct.Id)).ToList();
-            var list = new List<SelectListItem>() { new SelectListItem("Select Group Type", "0") };
+            var list = new List<SelectListItem>() { new SelectListItem("Select Course Group", "0") };
             foreach (var item in courseGroups)
             {
                 list.Add(new SelectListItem(item.Name, item.Id.ToString()));

@@ -27,12 +27,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZUNvbGxlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/CourseGroupsCollection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZUdyb3Vwc0NvbGxlY3Rpb24uY3NodG1s
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/CourseForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZUZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/CreateCourse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENyZWF0ZUNvdXJzZS5jc2h0bWw=
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/CourseGroupsCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZUdyb3Vwc0NvbGxlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/GetCourse.cshtml]
@@ -41,6 +41,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/Trainers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFRyYWluZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Course/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Home/Index.cshtml]
@@ -53,10 +61,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Shared/Pagination.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhZ2luYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AlgirdasCernevicius/source/repos/CMSys/CMSys.UI/Views/Shared/_ValidationScriptsPartial.cshtml]

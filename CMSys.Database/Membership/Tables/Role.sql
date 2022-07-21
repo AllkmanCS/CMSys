@@ -1,5 +1,0 @@
-﻿CREATE TABLE [Membership].[Role]
-(
-    [Id] UNIQUEIDENTIFIER CONSTRAINT [PK_Membership_Role] PRIMARY KEY,
-    [Name] NVARCHAR(64) NOT NULL CONSTRAINT [UK_Membership_Role_Name] UNIQUE
-)

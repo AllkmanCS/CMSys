@@ -13,8 +13,11 @@ namespace CMSys.UI.Automapper
                 .ForMember(cvm => cvm.Items, pl => pl.MapFrom(list => list.Items));
             CreateMap<Course, CourseViewModel>()
                 .ReverseMap();
+            CreateMap<CourseTrainer, CourseViewModel>().ReverseMap();
             CreateMap<CourseGroup, CourseGroupViewModel>();
             CreateMap<CourseType, CourseTypeViewModel>();
+            CreateMap<CourseTrainer, CourseTrainerViewModel>().ReverseMap();
+            CreateMap<TrainerViewModel, CourseTrainerViewModel>().ReverseMap();
         }
     }
 }

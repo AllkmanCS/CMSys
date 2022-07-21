@@ -7,7 +7,7 @@
     <div class="w3-row">
 
     <h3>Courses</h3>
-    <a class="btn btn-primary" asp-controller="Course" asp-action="CreateCourse">Create Course</a>
+    <a class="btn btn-primary" asp-controller="Course" asp-action="CourseForm">Create Course</a>
     </div>
     <div class="w3-show-inline-block w3-border w3-round">
         <div class="w3-bar w3-white w3-border w3-round">
@@ -29,17 +29,13 @@
                 <select asp-for="CourseViewModel.Id" asp-items="@Model.CourseTypes" class="w3-padding">
                     <option>Select Course Type</option>
                 </select>
-                @*<input type="submit" value="Submit" />*@
             </form>
             <form asp-controller="Course" asp-action="CourseCollection">
                 <select asp-for="CourseViewModel.Id" asp-items="@Model.CourseGroups" class="w3-padding">
                     <option>Select Course Group</option>
                 </select>
-                @*<input type="submit" value="Submit" />*@
             </form>
         </div>
-
-        @*<select asp-items="Model.CourseTypes" class="w3-padding" id="courseType" onchange=""></select>*@
         <div class="w3-container w3-white">
             <table>
                 <tr class="w3-border-bottom w3-margin" style="border-bottom:medium;">
@@ -83,11 +79,16 @@
                                 <button class="w3-border-blue w3-round-large w3-white">
                                     <i class="bi bi-info w3-text-blue"></i>
                                 </button>
-                                <button class="w3-border-yellow w3-round-large w3-white">
+                                <a asp-controller="Course" asp-action="Update" 
+                                asp-route-id="@course.Id"
+                                class="w3-border-yellow w3-round-large w3-white">
                                     <i class="bi bi-pencil-fill w3-text-yellow"></i>
-                                </button>
+                                </a>
                                 <button class="w3-border-yellow w3-round-large w3-white">
+                                    <a asp-controller="Course" asp-action="Trainers"
+                                    asp-route-id="@course.Id">
                                     <i class="bi bi-people-fill  w3-text-yellow"></i>
+                                    </a>
                                 </button>
                                 <button class="w3-border-red w3-round-large w3-white">
                                     <i class="bi bi-trash-fill  w3-text-red"></i>

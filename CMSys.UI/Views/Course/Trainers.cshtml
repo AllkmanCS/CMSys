@@ -10,7 +10,7 @@
                 <form asp-controller="Course" asp-action="Trainers">
                     <div class="card-header text-info"><b>Add Trainer</b></div>
                     <div class="card-body input-group mb-3">
-                        <select asp-for="Trainer.User.Id" asp-items="@Model.SelectionTrainers" class="w3-padding">
+                        <select asp-for="@Model.Trainer.User.Id" asp-items="@Model.SelectionTrainers" class="w3-padding">
                             <option>-- Select Trainer --</option>
                         </select>
                         <button type="submit" class="btn btn-primary">Add</button>

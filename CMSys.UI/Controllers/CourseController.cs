@@ -158,22 +158,18 @@ namespace CMSys.UI.Controllers
         [Route("admin/courses/trainers/{id}")]
         public IActionResult Trainers(CourseViewModel courseViewModel, Guid? id)
         {
+            var courseTrainerViewModel = new CourseTrainerViewModel();
             var trainers = _context.TrainerRepository.All().ToList();
             var trainersViewModel = new List<TrainerViewModel>();
             var mappedTrainers = _mapper.Map(trainers, trainersViewModel);
-            var selectedTrainer = mappedTrainers.FirstOrDefault();
+            var selectedTrainer = courseTrainerViewModel.Trainer.User.Id;
             var courseTrainers = _context.CourseTrainerRepository.All().Where(x => x.CourseId == id).ToList();
+            courseTrainerViewModel.Trainer.User.Id = selectedTrainer;
             var courseTrainersViewModel = new List<CourseTrainerViewModel>();
             var mappedCourseTrainers = _mapper.Map(courseTrainers, courseTrainersViewModel); //view model now has all current course trainers.
 
-            foreach (var trainer in mappedTrainers)
-            {
-                if (trainer)
-                {
+            mappedCourseTrainers.Add(courseTrainerViewModel);
 
-                }
-            }
-            
             var mappedCourse = _mapper.Map(courseViewModel.Trainers, courseTrainers);
             return RedirectToAction("Trainers");
         }

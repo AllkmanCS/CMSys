@@ -6,6 +6,6 @@
         public Guid TrainerId { get; set; }
         public int VisualOrder { get; set; }
 
-        public TrainerViewModel Trainer { get; set; }
+        public TrainerViewModel Trainer { get; set; } = new TrainerViewModel();
     }
 }

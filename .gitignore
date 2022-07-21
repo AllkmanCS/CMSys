@@ -3,4 +3,4 @@
 ################################################################################
 .vs/
 CMSys.Database/
-appsettings.json
+CMSys.UI/appsettings.json

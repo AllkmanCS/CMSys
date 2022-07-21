@@ -15,6 +15,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
        .AddCookie();
 
+
 var mapperConfig = new MapperConfiguration(mc => {
     mc.AddProfile<LoginProfile>();
     mc.AddProfile<CourseProfile>();

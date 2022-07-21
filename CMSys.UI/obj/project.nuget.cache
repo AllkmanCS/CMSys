@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "TGPJ1qz3FkvprNV8z0fHdZqnS5vneQ/QCgDhZjfPicHGtjOpAnphcCPZx6ANY4kC9RRjvvlNu2Adt/zzG5u2Og==",
+  "dgSpecHash": "Bt9v/gfDpRunrOsX3Q3ZFjwu8w2OB95NJBb8DY9+lFP/XRA/noAaJAngt21naVbUWTa+gCXNr9rtZw0tud01cg==",
   "success": true,
   "projectFilePath": "C:\\Users\\AlgirdasCernevicius\\source\\repos\\CMSys\\CMSys.UI\\CMSys.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
+    "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.1.2\\fluentvalidation.aspnetcore.11.1.2.nupkg.sha512",
+    "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.1.0\\fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
     "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.6\\microsoft.aspnetcore.authentication.jwtbearer.6.0.6.nupkg.sha512",
     "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\AlgirdasCernevicius\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
